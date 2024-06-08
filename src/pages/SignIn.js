@@ -35,7 +35,6 @@ const SignIn = () => {
         try {
             const respose = await post("/B2CCustomerRegister/CustomerLogin", formValues);
             if (respose?.Status) {
-                toast.success('Registration is success !');
                 setFormValues(initialFormData);
                 Cookies.set("isAuth", true);
                 navigate("/")
@@ -79,7 +78,7 @@ const SignIn = () => {
                             {formErrors.BranchCode && <p className='text-red-500 pl-3 my-[2px]'>{formErrors.BranchCode}</p>}
                         </div>
                         <div className='mt-6 flex flex-col items-center'>
-                            <button type='submit' className=' text-[#FFF] text-center text-[18px] px-10 py-3 rounded-[8px] font-semibold bg-[#7f32e3]'>Create Account</button>
+                            <button type='submit' className=' text-[#FFF] text-center text-[18px] px-10 py-3 rounded-[8px] font-semibold bg-[#7f32e3]'>log in</button>
                             <div className='pt-4'>
                                 <p className='text-gray-500'>Don't Have an Account?  <Link to="/sign-up" className='underline'>Sign Up</Link> </p>
                             </div>
